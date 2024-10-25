@@ -15,7 +15,7 @@ public class AnalyticsCounter {
 		String line = reader.readLine();
 
 		int i = 0;	
-		int headCount = 0;	// counts headaches
+		int headCount = 0;	// counts headaches - A supprimer, du coup
 		while (line != null) {
 			i++;	// increment i
 			System.out.println("symptom from file: " + line);
@@ -33,11 +33,16 @@ public class AnalyticsCounter {
 			line = reader.readLine();	// get another symptom
 		}
 		
-		// next generate output
+
+	try {
+			// next generate output
 		FileWriter writer = new FileWriter ("result.out");
 		writer.write("headache: " + headacheCount + "\n");
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + pupilCount + "\n");
 		writer.close();
+		} catch (NullPointerException exception) {
+			System.out.println("Le fichier de symptoms n'a pas pu être généré correctement.");
+		}
 	}
 }
