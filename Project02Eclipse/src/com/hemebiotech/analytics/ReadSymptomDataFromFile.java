@@ -15,7 +15,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		this.filepath = "symptoms.txt";
 	}
 	
-	public List<String> GetSymptoms() {
+	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
 		
 		if (filepath != null) {
@@ -34,12 +34,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		}
 		
 		return result;
-	}
-
-	@Override
-	public List<String> getSymptoms() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getSymptoms'");
 	}
 
 }

@@ -1,8 +1,5 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,21 +40,6 @@ public class AnalyticsCounter {
 
 	//5.Méthode qui écrit dans le result.out
 	public void writeSymptoms(Map<String, Integer> symptoms){
-		ISymptomsWriter.writeSymptoms(symptoms);
-	}
-
-
-	// Méthode Main - A voir/compléter/corriger à l'étape 5 !
-	public static void main(String[] args) {
-
-	try {
-
-		ISymptomReader reader = new  ReadSymptomDataFromFile("symptoms.txt");
-		ISymptomsWriter writer = new  WriteSymptomsDataToFile("result.out");
-
-			
-		} catch (NullPointerException exception) {
-			System.out.println("Le fichier de symptoms n'a pas pu être généré correctement.");
-		}
+		writer.writeSymptoms(symptoms);
 	}
 	}
