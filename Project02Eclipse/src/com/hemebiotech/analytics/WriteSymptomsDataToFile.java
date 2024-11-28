@@ -5,20 +5,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+
+// Paramètre le chemin où sera écrit result.out
 public class WriteSymptomsDataToFile implements ISymptomsWriter{
 
     private String filepath;
-
-
-    // Paramètre le chemin où sera écrit result.out
+    
     public WriteSymptomsDataToFile(String filepath) {
         this.filepath = filepath;
     }
 
-    //S'occupe de l'écriture
-
     @Override
-
     public void writeSymptoms(Map<String, Integer> symptoms) {
 
         if (filepath != null && symptoms != null) {
